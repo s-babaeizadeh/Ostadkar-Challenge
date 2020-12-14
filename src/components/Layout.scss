@@ -1,0 +1,14 @@
+.main {
+  > div[class*=col-] {
+    border: 1px solid;
+    height: 6.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffe6;
+    
+    &.xl {
+      height: 12.5rem;
+    }
+  }
+}
