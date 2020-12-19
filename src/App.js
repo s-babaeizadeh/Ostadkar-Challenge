@@ -1,25 +1,24 @@
-import React,{ Component } from 'react';
+import React,{ useState } from 'react';
 import Layout from './components/Layout';
 import DropDownList from './components/DropDownList';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-class App extends Component { 
-    state = {
-      selectedItem: '',
-    };  
+const App = () => { 
+  const[state, setState] = useState({
+    selectedItem: '',
+  })
+     
 
-   handleChange = (selectedItem) => {
-    this.setState({selectedItem: selectedItem.target.value});
+   const handleChange = (selectedItem) => {
+    setState({selectedItem: selectedItem.target.value});
   };
 
-  render() {
-    return (
+  return (
       <div className="container-fluid">
-        <DropDownList handleChange={this.handleChange}/>
-        <Layout selectedItem={this.state.selectedItem}/></div>
+        <DropDownList handleChange={handleChange}/>
+        <Layout selectedItem={state.selectedItem}/></div>
     );
-  }
 }
 
 

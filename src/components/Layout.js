@@ -1,5 +1,6 @@
 import React from "react";
 import './Layout.scss';
+import ReactHtmlParser from 'react-html-parser'
 
 
 const Layout =({ selectedItem }) => {
@@ -43,7 +44,7 @@ const Layout =({ selectedItem }) => {
     }
 
 
-    return <div className="row main" dangerouslySetInnerHTML={{__html: content}}/>;
+    return <div className="row main">{ReactHtmlParser(content)}</div>;
 
 
 }
